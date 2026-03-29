@@ -4,12 +4,15 @@
     font-family: generic-sans;
     box-sizing: border-box;
 }
+
 html,body{
     width: 100%;
     height: 100%;
-
 }
+
+/* ===== BODY LOAD ANIMATION ===== */
 body {
+    background-color: black;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.8s ease;
@@ -19,6 +22,8 @@ body.loaded {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ===== CUSTOM CURSOR ===== */
 #minicircle {
     width: 10px;
     height: 10px;
@@ -31,6 +36,7 @@ body.loaded {
     pointer-events: none; 
     transform: translate(-50%, -50%);
 }
+
 #minicircle.active {
     display: flex;
     justify-content: center;
@@ -39,36 +45,40 @@ body.loaded {
     height: 50px;
     font-size: 12px;
 }
+
+/* ===== MAIN ===== */
 #main{
     width: 100%;
     background-color: black;
 }
+
+/* ===== HERO ===== */
 #hero{
     width: 100%;
     min-height: 100vh;
-    background-color: black;
     color: white;
     position: relative;
 }
+
 #nav{
     width: 100%;
     padding: 20px 40px;
-    color: white;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     font-size: 18px;
 }
+
 #nav a{
     color: white;
-    font-size:18px;
     text-decoration: none;
 }
+
+/* ===== HEADING ===== */
 #heading{
     margin-top: 30px;
 }
-#heading h1{
 
+#heading h1{
     font-size: 10vw;
     text-transform: uppercase;
     font-weight: 900;
@@ -76,49 +86,55 @@ body.loaded {
     margin-left: 50px;
     opacity: 0.7;
 }
+
 #heading h1#secondh1{
     margin-left: 160px;
 }
+
 .blocktext{
-    width:fit-content;
+    width: fit-content;
 }
+
 .blocktext h5{
     text-align: right;
     text-transform: uppercase;
     font-size: 20px;
 }
+
+/* ===== SMALL TEXT ===== */
 #chotiheading{
     margin-top: 30px;
     padding-right: 40px;
 }
+
 #chotiheading h5{
     text-align: right;
     text-transform: uppercase;
     font-size: 1.1vw;
-    margin-top: .5vw;
-
-
 }
- #herofooter{
+
+/* ===== HERO FOOTER ===== */
+#herofooter{
     width: 100%;
     position: absolute;
     bottom: 1%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 2vw;
     font-size: 12px;
 }
+
 #herofooter a{
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    
 }
+
 #herofooter #iconset{
     display: flex;
     gap: 5px;
 }
+
 #herofooter .circle{
     width: 30px;
     height: 30px;
@@ -128,14 +144,16 @@ body.loaded {
     align-items: center;
     justify-content: center;
 }
+
+/* ===== SECOND SECTION ===== */
 #second{
     width: 100%;
     min-height: 100vh;
-    background-color: black;
-    padding: 10vw 10vw 0vw 2vw;
+    padding: 10vw 5vw;
     color: white;
-
 }
+
+/* ===== ELEMENT ===== */
 .elem{
     position: relative;
     width: 100%;
@@ -143,104 +161,86 @@ body.loaded {
     padding: 4vw 1vw;
     border-top: 1px solid #888;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-}
-.elem:hover img{
-    opacity: 1;   
-}
-.elem:hover h1 {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    transform: translateX(20px); 
-    color: #aaa; 
-    opacity: 0.3;
+}
+
+.elem:last-child{
+    border-bottom: 1px solid #888;
 }
 
 .elem h1{
     text-transform: uppercase;
     font-size: 7vw;
-    opacity: 0.7; 
+    opacity: 0.7;
     transition: all 0.4s ease;
+    word-break: break-word;
 }
+
 .elem h5{
     font-size: 1.3vw;
 }
-#lastelem{
-    border-bottom: 1px solid #888;
+
+/* hover effect */
+.elem:hover h1{
+    transform: translateX(20px);
+    color: #aaa;
+    opacity: 0.3;
 }
 
-.elem img {
-    left: 50%;
-    top: 50%;
-    cursor: pointer;
+/* ===== IMAGE FOLLOW ===== */
+.elem img{
     position: absolute;
     width: 22vw;
-    height: auto;
     opacity: 0;
     pointer-events: none;
     border-radius: 10px;
     z-index: 99999;
     transform: translate(-50%, -50%);
     transition: opacity 0.3s ease;
-  
+    will-change: transform, left, top;
 }
-#third{
-    width: 100%;
-    min-height: 20vh;
-    background-color: black;
-}
-/* ===== ABOUT SECTION ===== */
 
+/* ===== ABOUT ===== */
 #about{
     width: 100%;
     min-height: 100vh;
     color: white;
-    background-color: black;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: center; /* center content */
-    /* padding: 10vw; */
-    padding-left: 25vw;
+    padding: 10vw;
 }
 
-/* container */
 .aboutbox{
     display: flex;
     align-items: center;
     gap: 3vw;
 }
 
-/* image */
 #about img{
     width: 20vw;
     border-radius: 10px;
 }
 
-/* text box */
 #aboutme{
     max-width: 500px;
     display: flex;
     flex-direction: column;
 }
 
-/* heading */
 #aboutme h5{
     text-transform: uppercase;
     opacity: 0.7;
     font-size: 1vw;
 }
 
-/* paragraph */
 #aboutme p{
     padding: 15px 0 30px 0;
     font-size: 1.2vw;
     line-height: 1.6;
 }
 
-/* button */
 #aboutme a{
     color: white;
     text-decoration: none;
@@ -251,158 +251,47 @@ body.loaded {
     width: fit-content;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
-
-@media (max-width: 600px){
-
-    #about{
-        padding: 10vw 5vw;
-        min-height: auto;
-        text-align: center;
-    }
-
-    .aboutbox{
-        flex-direction: column; /* 🔥 main fix */
-        gap: 20px;
-    }
-
-    #about img{
-        width: 50vw;
-    }
-
-    #aboutme{
-        align-items: center;
-    }
-
-    #aboutme h5{
-        font-size: 3vw;
-    }
-
-    #aboutme p{
-        font-size: 3.5vw;
-    }
-
-    #aboutme a{
-        font-size: 3vw;
-        padding: 10px 18px;
-    }
-}
+/* ===== SUBSCRIBE ===== */
 #subscribe{
-    background-color: black;
+    padding: 40px 30px 150px;
     color: white;
-    padding: 40px 30px;
-    padding-bottom: 150px;
-
 }
+
 #subscribe h5{
-    text-transform: uppercase;
     font-size: 0.9vw;
     opacity: 0.7;
 }
+
 #subscribe h3{
     font-size: 1.2vw;
-    text-transform: uppercase;
     margin-top: 10px;
-
 }
+
+/* ===== FOOTER ===== */
 #footer{
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 20px 40px;
     color: white;
-    background-color: black;
 }
+
 #footerleft{
     display: flex;
     gap: 20px;
     font-size: 1vw;
 }
+
 #footerright{
     display: flex;
     gap: 50px;
 }
+
 #footerright a{
     color: white;
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 15px;
 }
 
-@media (max-width: 600px) {
-
-    #nav {
-        padding: 15px 20px;
-        font-size: 14px;
-    }
-
-    #heading h1 {
-        font-size: 12vw;
-        margin-left: 20px;
-    }
-
-    #heading h1#secondh1 {
-        margin-left: 40px;
-    }
-
-    .blocktext h5 {
-        font-size: 14px;
-    }
-
-    #chotiheading h5 {
-        font-size: 3vw;
-    }
-
-    #second {
-        height: auto; /* 🔥 fix */
-        padding: 10vw 5vw;
-    }
-
-    .elem {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .elem h1 {
-        font-size: 10vw;
-    }
-
-    .elem h5 {
-        font-size: 3vw;
-    }
-
-    .elem img {
-        width: 60vw;
-    }
-
-    #about {
-        flex-direction: column;
-        padding: 10vw 5vw;
-        padding-left: 5vw; /* 🔥 fix */
-        height: auto;
-        text-align: center;
-    }
-
-    #about img {
-        width: 50vw;
-    }
-
-    #aboutme p {
-        font-size: 3.5vw;
-    }
-
-    #footer {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    #footerright {
-        gap: 20px;
-    }
-}
-
-/* Chrome, Edge, Safari */
+/* ===== SCROLLBAR ===== */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -413,9 +302,4 @@ body.loaded {
 
 ::-webkit-scrollbar-thumb {
     background: black;
-}
-
-/* Firefox */
-body {
-    scrollbar-color: black black;
 }

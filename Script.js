@@ -1,31 +1,31 @@
+// 🔥 Page load animation
 window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 });
 
+// 🔥 Cursor circle
 const circle = document.querySelector("#minicircle");
 
-let x = 0, y = 0;
-let targetX = 0, targetY = 0;
+let cx = 0, cy = 0;
+let targetCX = 0, targetCY = 0;
 
 window.addEventListener("mousemove", (e) => {
-    // 👉 distance (offset add kiya)
-    targetX = e.clientX ;  // right side gap
-    targetY = e.clientY ;  // bottom gap
+    targetCX = e.clientX;
+    targetCY = e.clientY;
 });
 
-function animate() {
-    // 👉 slow movement (lag effect)
-    x += (targetX - x) * 0.08;
-    y += (targetY - y) * 0.08;
+function animateCircle() {
+    cx += (targetCX - cx) * 0.08;
+    cy += (targetCY - cy) * 0.08;
 
-    circle.style.left = x + "px";
-    circle.style.top = y + "px";
+    circle.style.left = cx + "px";
+    circle.style.top = cy + "px";
 
-    requestAnimationFrame(animate);
+    requestAnimationFrame(animateCircle);
 }
+animateCircle();
 
-animate();
-
+// 🔥 Image hover effect
 const elems = document.querySelectorAll(".elem");
 
 elems.forEach((elem) => {
@@ -35,13 +35,14 @@ elems.forEach((elem) => {
     let targetX = 0, targetY = 0;
     let prevX = 0;
 
+    // 👉 Mouse move inside element
     elem.addEventListener("mousemove", (e) => {
         const rect = elem.getBoundingClientRect();
 
         targetX = e.clientX - rect.left;
         targetY = e.clientY - rect.top;
 
-        // 🔥 velocity-based tilt
+        // 🔥 velocity tilt
         let deltaX = e.clientX - prevX;
         prevX = e.clientX;
 
@@ -53,27 +54,37 @@ elems.forEach((elem) => {
         `;
     });
 
-    function animate() {
-        // 🔥 smooth follow (FIXED)
+    // 🔥 IMPORTANT FIX (no left flash)
+    elem.addEventListener("mouseenter", (e) => {
+        const rect = elem.getBoundingClientRect();
+
+        x = targetX = e.clientX - rect.left;
+        y = targetY = e.clientY - rect.top;
+
+        img.style.left = x + "px";
+        img.style.top = y + "px";
+
+        img.style.opacity = 1;
+    });
+
+    // 🔥 Smooth follow animation
+    function animateImage() {
         x += (targetX - x) * 0.15;
         y += (targetY - y) * 0.15;
 
         img.style.left = x + "px";
         img.style.top = y + "px";
 
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animateImage);
     }
 
-    animate();
+    animateImage();
 
-    elem.addEventListener("mouseenter", () => {
-        img.style.opacity = 1;
-    });
-
+    // 👉 Mouse leave
     elem.addEventListener("mouseleave", () => {
         img.style.opacity = 0;
 
-        // 🔄 reset tilt
+        // reset tilt
         img.style.transform = "translate(-50%, -50%) rotate(0deg)";
     });
 });

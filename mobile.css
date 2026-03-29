@@ -1,0 +1,133 @@
+/* ===== MOBILE FIX (KEEP STRUCTURE SAME) ===== */
+
+*{
+    overflow-x: hidden;
+}
+
+/* cursor off */
+#minicircle{
+    display: none;
+}
+
+/* ===== NAV ===== */
+#nav{
+    padding: 15px 20px;
+    font-size: 14px;
+}
+
+/* ===== HERO ===== */
+#heading{
+    margin-top: 100px;
+}
+
+#heading h1{
+    font-size: 10vw;  /* smaller but same layout */
+    margin-left: 5vw;
+}
+
+#heading h1#secondh1{
+    margin-left: 12vw;
+}
+
+.blocktext h5{
+    font-size: 2.5vw;
+}
+
+/* ===== SMALL TEXT ===== */
+#chotiheading h5{
+    margin-top: 15px;
+    font-size: 2.5vw;
+}
+
+/* ===== HERO FOOTER ===== */
+#herofooter{
+    padding: 15px;
+    font-size: 10px;
+}
+
+/* ===== SECOND ===== */
+#second{
+    padding: 8vw 5vw;
+}
+
+.elem{
+    padding: 5vw 0;
+}
+
+.elem h1{
+    font-size: 9vw;
+}
+
+.elem h5{
+    font-size: 2.5vw;
+}
+
+/* image smaller */
+.elem img{
+    width: 35vw;
+}
+
+/* ===== ABOUT ===== */
+#about{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10vw 5vw;
+    padding-left: 10vw;
+}
+
+.aboutbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+}
+
+#about img{
+    width: 30vw;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+#aboutme h5{
+    text-align: center;
+    font-size: 2.5vw;
+}
+
+#aboutme p{
+    font-size: 3vw;
+}
+
+#aboutme a{
+    font-size: 2.5vw;
+}
+#subscribe h5{
+    font-size: 5px;
+}
+#subscribe h3{
+    font-size: 10px;
+}
+/* ===== FOOTER ===== */
+#footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    font-size: 10px;
+    
+}
+#footerleft h5{
+ display: none;
+ 
+}
+#footerright{ 
+    gap: 20px;
+}
