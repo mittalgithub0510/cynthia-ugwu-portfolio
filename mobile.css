@@ -17,11 +17,11 @@
 
 /* ===== HERO ===== */
 #heading{
-    margin-top: 100px;
+    margin-top: 170px;
 }
 
 #heading h1{
-    font-size: 10vw;  /* smaller but same layout */
+    font-size: 35px;  /* smaller but same layout */
     margin-left: 5vw;
 }
 
@@ -35,14 +35,15 @@
 
 /* ===== SMALL TEXT ===== */
 #chotiheading h5{
-    margin-top: 15px;
-    font-size: 2.5vw;
+    /* margin-top: 20px; */
+    font-size: 10px;
 }
 
 /* ===== HERO FOOTER ===== */
 #herofooter{
-    padding: 15px;
+    padding: 0px 10px;
     font-size: 10px;
+    padding-bottom: 30px;
 }
 
 /* ===== SECOND ===== */
